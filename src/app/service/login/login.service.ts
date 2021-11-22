@@ -8,7 +8,6 @@ import {Registration} from "../../models/registration.model";
   providedIn: 'root'
 })
 export class LoginService {
-
   LOGIN_URL =  'https://tsenga.herokuapp.com/api/users/login';
   constructor(private http: HttpClient) { }
 
