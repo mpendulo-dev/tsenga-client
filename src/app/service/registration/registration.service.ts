@@ -8,7 +8,7 @@ import {Registration} from "../../models/registration.model";
 })
 export class RegistrationService {
 
-  REGISTRATION_URL = 'http://localhost:3000/api/users/register';
+  REGISTRATION_URL = 'https://tsenga.herokuapp.com/api/users/register';
   constructor(private http: HttpClient) { }
 
   registerUser(userData: Registration[]): Observable<Registration[]> {

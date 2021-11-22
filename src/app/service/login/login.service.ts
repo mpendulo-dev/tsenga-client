@@ -9,7 +9,7 @@ import {Registration} from "../../models/registration.model";
 })
 export class LoginService {
 
-  LOGIN_URL =  'http://localhost:3000/api/users/login';
+  LOGIN_URL =  'https://tsenga.herokuapp.com/api/users/login';
   constructor(private http: HttpClient) { }
 
   userLogin(userCredentials: Login[]): Observable<Login[]> {
