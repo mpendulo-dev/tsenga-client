@@ -1,0 +1,43 @@
+.row {
+  margin: 0;
+  padding: 0;
+}
+.btn {
+  background: #F69478;
+  display: flex;
+  justify-content: center;
+  color: white;
+  border: 2px solid #F69478;
+  box-shadow: 0 2px #F36942;
+}
+.btn:hover {
+  background: #F36942;
+}
+.btn-secondary {
+  color: white;
+  height: 40px;
+  width: 160px;
+  border-radius: 5px
+}
+.collection__header {
+  font-family: 'Ephesis', cursive;
+}
+.collec__part {
+  color: #F15025;
+}
+.card {
+  cursor: pointer;
+}
+.card:hover {
+  opacity: 0.8;
+}
+div.card.body {
+  height: 289px;
+}
+@media (min-width: 1025px) and (max-width: 1441px) {
+  .card {
+    width: 360px;
+    height: 539.45px;
+  }
+}
+
