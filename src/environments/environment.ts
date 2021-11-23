@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  REG_URL: 'https://tsenga.herokuapp.com/api/users/register',
+  LOGIN_URL: 'https://tsenga.herokuapp.com/api/users/login'
 };
 
 /*
