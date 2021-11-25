@@ -5,6 +5,10 @@
 .ecommerce {
   color: #F15025;
 
+
+}
+.navbar-brand {
+  cursor: pointer;
 }
 .btn-login {
   color: white;
@@ -22,7 +26,7 @@
 }
 .btn-login:hover {
   background: #f16d49;
-  
+
 }
 .btn-cart:hover {
   background: #f16d49;
