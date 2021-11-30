@@ -3,6 +3,7 @@ import { FormBuilder, Validators, FormGroup} from "@angular/forms";
 import { PasswordValidator } from '../../shared/password.validator';
 import {RegistrationService} from "../../service/registration/registration.service";
 import {Router} from "@angular/router";
+import {NotificationsService} from "angular2-notifications";
 
 
 @Component({
@@ -16,7 +17,7 @@ export class RegisterComponent implements OnInit {
   registrationForm: FormGroup;
 
   constructor(private fb: FormBuilder, private registrationService: RegistrationService,
-              private router: Router) { }
+              private router: Router, private _service: NotificationsService) { }
 
   ngOnInit(): void {
     this.registrationForm = this.fb.group({
@@ -46,7 +47,7 @@ export class RegisterComponent implements OnInit {
 
   /* Registration submit method*/
   onSubmit() {
-    console.log(this.registrationForm.value);
+   /* console.log(this.registrationForm.value);*/
     this.registrationService.registerUser(this.registrationForm.value).subscribe(data => {
       /*console.log(data);*/
 
@@ -55,11 +56,10 @@ export class RegisterComponent implements OnInit {
         this.router.navigate(['/login']);
       }
 
-    },(error => {
-      console.log('Something went wrong!', error);
-      })
+    },(error) =>{
+      this._service.error('error', error.error);
 
-    );
+    });
   }
 
 }

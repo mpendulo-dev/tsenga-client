@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Router} from "@angular/router";
 import {LoginService} from "../../service/login/login.service";
+import {NotificationsService} from "angular2-notifications";
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
   constructor(private fb: FormBuilder,private loginService: LoginService,
-              private router: Router) { }
+              private router: Router, private _service: NotificationsService) { }
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -38,7 +39,8 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/home']);
       }
     },(error) =>{
-        console.log('Something went wrong', error);
-    })
+      this._service.error('error', error.error);
+
+    });
   }
 }
