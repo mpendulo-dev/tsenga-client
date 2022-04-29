@@ -53,7 +53,7 @@ export class RegisterComponent implements OnInit {
 
       /* Navigate to login page once user is registered */
       if(data) {
-        this.router.navigate(['/login']);
+        this.router.navigate(['/home']);
       }
 
     },(error) =>{
