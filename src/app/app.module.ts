@@ -16,6 +16,8 @@ import { NgbCollapseModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule} from "@angular/common/http";
 import { ReactiveFormsModule } from '@angular/forms';
 import { SimpleNotificationsModule } from 'angular2-notifications';
+import { NgHttpLoaderModule } from 'ng-http-loader';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +30,7 @@ import { SimpleNotificationsModule } from 'angular2-notifications';
     CheckoutComponent,
     RegisterComponent,
     LoginComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,9 +39,10 @@ import { SimpleNotificationsModule } from 'angular2-notifications';
     NgbModule,
     ReactiveFormsModule,
     HttpClientModule,
-    SimpleNotificationsModule.forRoot()
+    SimpleNotificationsModule.forRoot(),
+    NgHttpLoaderModule.forRoot(),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
