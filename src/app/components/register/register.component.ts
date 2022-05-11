@@ -1,32 +1,37 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators, FormGroup} from "@angular/forms";
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { PasswordValidator } from '../../shared/password.validator';
-import {RegistrationService} from "../../service/registration/registration.service";
-import {Router} from "@angular/router";
-import {NotificationsService} from "angular2-notifications";
-
+import { RegistrationService } from '../../service/registration/registration.service';
+import { Router } from '@angular/router';
+import { NotificationsService } from 'angular2-notifications';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
-
   // @ts-ignore
   registrationForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private registrationService: RegistrationService,
-              private router: Router, private _service: NotificationsService) { }
+  constructor(
+    private fb: FormBuilder,
+    private registrationService: RegistrationService,
+    private router: Router,
+    private _service: NotificationsService
+  ) {}
 
   ngOnInit(): void {
-    this.registrationForm = this.fb.group({
-      firstName: [null,[Validators.required, Validators.minLength(2)]],
-      lastName: ['',[Validators.required, Validators.minLength(2)]],
-      email: ['', [Validators.required]],
-      password: ['',[Validators.required, Validators.minLength(6)]],
-      confirmPassword: ['', [Validators.required]]
-    },{validator: PasswordValidator});
+    this.registrationForm = this.fb.group(
+      {
+        firstName: [null, [Validators.required, Validators.minLength(2)]],
+        lastName: ['', [Validators.required, Validators.minLength(2)]],
+        email: ['', [Validators.required]],
+        password: ['', [Validators.required, Validators.minLength(6)]],
+        confirmPassword: ['', [Validators.required]],
+      },
+      { validator: PasswordValidator }
+    );
   }
   /* Getter for form controls */
   get firstName() {
@@ -45,21 +50,17 @@ export class RegisterComponent implements OnInit {
     return this.registrationForm.controls.confirmPassword;
   }
 
-  /* Registration submit method*/
   onSubmit() {
-   /* console.log(this.registrationForm.value);*/
-    this.registrationService.registerUser(this.registrationForm.value).subscribe(data => {
-      /*console.log(data);*/
-
-      /* Navigate to login page once user is registered */
-      if(data) {
-        this.router.navigate(['/home']);
-      }
-
-    },(error) =>{
-      this._service.error('error', error.error);
-
-    });
+    this.registrationService
+      .registerUser(this.registrationForm.value)
+      .subscribe(
+        (data) => {
+          if (data) {
+            this.router.navigate(['/home']);
+          }
+        },
+        (error) => {
+          this._service.error('error', error.error);
+        });
   }
-
 }

@@ -30,15 +30,14 @@ export class LoginComponent implements OnInit {
   get password() {
     return this.loginForm.controls.password;
   }
+  
   login() {
-    /*console.log(this.loginForm.value);*/
     this.loginService.userLogin(this.loginForm.value).subscribe(user => {
-    /*  console.log(user);*/
-
       if(user) {
         this.router.navigate(['/home']);
       }
     },(error) =>{
+
       this._service.error('error', error.error);
 
     });
