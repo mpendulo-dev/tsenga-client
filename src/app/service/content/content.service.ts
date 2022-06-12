@@ -11,8 +11,11 @@ export class ContentService {
   constructor(private htpp: HttpClient) {}
 
   getProducts = (): Observable<any> => {
-    return this.htpp.get(this.productsUrl);
+    return this.htpp.get(`${this.productsUrl}?populate=*`);
   };
+  getProduct = (id: any) : Observable<any> => {
+    return this.htpp.get(`${this.productsUrl}/${id}?populate=*`);
+  }
   getProductsOnSpecial = (): Observable<any> => {
     return this.htpp.get(this.specialUrl);
   }

@@ -17,6 +17,7 @@ import { HttpClientModule} from "@angular/common/http";
 import { ReactiveFormsModule } from '@angular/forms';
 import { SimpleNotificationsModule } from 'angular2-notifications';
 import { NgHttpLoaderModule } from 'ng-http-loader';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { NgHttpLoaderModule } from 'ng-http-loader';
     RegisterComponent,
     LoginComponent,
     FooterComponent,
+    ProductDetailsComponent,
   ],
   imports: [
     BrowserModule,

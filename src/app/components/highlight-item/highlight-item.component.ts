@@ -12,7 +12,7 @@ export class HighlightItemComponent implements OnInit {
 
   ngOnInit(): void {
     this.contentService.getProductsOnSpecial().subscribe((data) => {
-      console.log("hi=>",data.data);
+
       this.highlights = data.data;
     })
   }

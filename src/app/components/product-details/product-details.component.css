@@ -1,0 +1,13 @@
+.btn {
+  background: #f69478;
+  display: flex;
+  justify-content: center;
+  color: white;
+  border: 2px solid #f69478;
+  box-shadow: 0 2px #f36942;
+}
+footer {
+  position:fixed;
+  bottom: 0;
+  width: 100%;
+}
