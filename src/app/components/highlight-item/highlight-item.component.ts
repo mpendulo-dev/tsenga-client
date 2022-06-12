@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ContentService } from '../../service/content/content.service';
 @Component({
   selector: 'app-highlight-item',
   templateUrl: './highlight-item.component.html',
@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HighlightItemComponent implements OnInit {
 
-  constructor() { }
+  highlights: any[] =[];
+  constructor(private contentService: ContentService) { }
 
   ngOnInit(): void {
+    this.contentService.getProductsOnSpecial().subscribe((data) => {
+      console.log("hi=>",data.data);
+      this.highlights = data.data;
+    })
   }
 
 }

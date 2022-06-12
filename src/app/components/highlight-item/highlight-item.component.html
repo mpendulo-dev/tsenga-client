@@ -1,9 +1,20 @@
 <div class="highlight">
-    <!--highlight title/header-->
-    <div class="mt-5">
-    <u><p class="highlight__header text-center fw-bold">High<span class="high__text">light</span></p></u> 
+  <div class="mt-5">
+    <u>
+      <p class="highlight__header text-center fw-bold">
+        High<span class="high__text">light</span>
+      </p>
+    </u>
+  </div>
+  <div class="row" *ngFor="let item of highlights">
+    <div class="col-md-6 col-sm-12">
+      <p class="mx-5">Thee All powerful <span class="mac">Mac pro</span> (Also know as the grater)</p>
+      <img [src]="item?.attributes.bannerImg.data[1].attributes.url" alt="highlight-image">
     </div>
-  <div class="col-xs-12 d-flex justify-content-center">
-
+    <div class="col-md-6 col-sm-12">
+      <h1 class="highlight__title">{{item?.attributes.title}}</h1>
+      <h3 class="description">{{item?.attributes.description}}</h3>
+      <img [src]="item?.attributes.bannerImg.data[0].attributes.url" alt="highlight-image">
+    </div>
   </div>
 </div>

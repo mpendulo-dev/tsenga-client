@@ -1,40 +1,29 @@
 .store__name {
   font-size: 50px;
-  font-family: 'Ephesis', cursive;
+  font-family: "Ephesis", cursive;
 }
 .ecommerce {
-  color: #F15025;
-
-
+  color: #f15025;
 }
 .navbar-brand {
   cursor: pointer;
 }
-.btn-login {
-  color: white;
-  border: 2px solid #f58f73;
-  background: #fc7e5b;
-  width: 95px;
-  /*font-weight: bold;*/
 
-}
 .btn-cart {
   color: white;
   border: 2px solid #f58f73;
   background: #fc7e5b;
-  width: 95px;
+  width: 70px;
 }
 .btn-login:hover {
   background: #f16d49;
-
 }
 .btn-cart:hover {
   background: #f16d49;
 }
 .nav-link:hover {
-  color: #F15025;
+  color: #f15025;
 }
 /* .bi:hover {
   color: #F15025;
 } */
-

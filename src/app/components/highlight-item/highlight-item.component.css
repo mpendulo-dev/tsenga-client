@@ -7,8 +7,22 @@
   font-family: 'Ephesis', cursive;
   font-size: 50px;
 }
+.highlight__title {
+  font-family: 'Ephesis', cursive;
+  font-size: 60px;
+  padding: 10px;
+}
 .high__text {
   color: #F15025;
+}
+.mac {
+  color: #F15025;
+  font-size: 20px;
+}
+.description {
+  font-family: 'Ephesis', cursive;
+  color: #F15025;
+  font-size: 60px;
 }
 .btn {
   background: #F69478;
@@ -29,6 +43,10 @@
     margin: 15px;
   }
   .highlight {
-    height: 650px;
+    height: 850px;
+  }
+  img {
+    width: 300px;
+    height: 200px;
   }
 }
