@@ -15,7 +15,7 @@
 - Back End - NodeJS, Express and MongoDB
 - Headless CMS for content - Strapi Version 4
 - The Media library files on Strapi are stored on Cloudinary
-- Front End is hosted on Netlify, Back End server is on Heroku and the CMS is on Heroku topo.
+- Front End is hosted on <b>Netlify</b>, Back End server is on <b>Heroku</b> and the CMS is on Heroku too.
 
 ## Instructions
 1. Make sure you have nodejs and Angular CLI installed, If not install them using the following links:
