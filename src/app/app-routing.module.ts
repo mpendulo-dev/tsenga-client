@@ -7,6 +7,7 @@ import {CheckoutComponent} from "./components/checkout/checkout.component";
 import {HighlightItemComponent} from "./components/highlight-item/highlight-item.component";
 import {RegisterComponent} from "./components/register/register.component";
 import {ProductDetailsComponent} from "./components/product-details/product-details.component";
+import { CartComponent } from './components/cart/cart.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'checkout', component: CheckoutComponent },
   { path: 'highlight', component: HighlightItemComponent },
   {path: "product/:id", component: ProductDetailsComponent},
+  {path: "cart", component: CartComponent},
   { path: '', component: HomeComponent },
 ];
 @NgModule({

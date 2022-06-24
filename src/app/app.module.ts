@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { SliderComponent } from './components/slider/slider.component';
 import { CollectionComponent } from './components/collection/collection.component';
 import { HighlightItemComponent } from './components/highlight-item/highlight-item.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
@@ -18,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SimpleNotificationsModule } from 'angular2-notifications';
 import { NgHttpLoaderModule } from 'ng-http-loader';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { CartComponent } from './components/cart/cart.component';
 
 
 @NgModule({
@@ -25,7 +25,6 @@ import { ProductDetailsComponent } from './components/product-details/product-de
     AppComponent,
     HomeComponent,
     NavbarComponent,
-    SliderComponent,
     CollectionComponent,
     HighlightItemComponent,
     CheckoutComponent,
@@ -33,6 +32,7 @@ import { ProductDetailsComponent } from './components/product-details/product-de
     LoginComponent,
     FooterComponent,
     ProductDetailsComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,

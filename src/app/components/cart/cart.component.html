@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+<div class="cart mt-3">
+    <h1 class="text-center mb-4">Shopping Cart</h1>
+    <div class="container"  *ngIf="cart.length !== 0">
+        <table class="table">
+            <thead>
+              <tr>
+        
+                <th scope="col">Product Details</th>
+                <th scope="col">Price</th>
+                <th scope="col">Remove</th>
+              </tr>
+            </thead>
+            <tbody  *ngFor="let product of cart">
+              <tr>
+                
+                <td>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img [src]="product?.productImage.data[0].attributes.url" class="card-img-top" alt="{{product?.name}}"
+                            width="300px" height="240px">
+                        </div> 
+                        <div class="col-md-6">{{product?.name}}</div>
+                    </div>
+                </td>
+                <td>R{{product?.price}}</td>
+                <td><button class="btn btn-danger">Remove</button></td>
+              </tr>        
+            </tbody>         
+        </table>
+    </div>
+    
+</div>
