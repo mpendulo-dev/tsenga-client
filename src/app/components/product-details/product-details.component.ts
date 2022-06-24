@@ -30,9 +30,6 @@ export class ProductDetailsComponent implements OnInit {
     }
   }
   AddToCart(product: any[]) {
-    console.log("buy");
-    console.log(product);
-    
     this.contentService.AddProductToCart(product);
     this.router.navigate(['/cart']);
 

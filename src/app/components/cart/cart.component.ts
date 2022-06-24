@@ -10,14 +10,14 @@ export class CartComponent implements OnInit {
 
   cart: any[] = [];
   total: number = 0;
+  numberOfProductsInCart: number = 0;
   
   constructor( private contentService: ContentService) { }
 
   ngOnInit(): void {
     this.contentService.getProductsOnCart.subscribe(data => {
       this.cart = data;
-      console.log("on cart",data);
-      
+     this.numberOfProductsInCart = this.cart.length;      
     })
   }
 
