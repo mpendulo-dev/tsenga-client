@@ -27,5 +27,14 @@ export class ContentService {
   AddProductToCart(products: any) {
     this.productsOnCart.next(this.productsOnCart.getValue().concat(products));
   }
+  removeProductsOnCart(data: any) {
+   const products: any[] = this.productsOnCart.getValue();
+   products.forEach((item: any, index: any) => {
+    if (item === data) {
+      products.splice(index, 1);
+    }
+   });
+   this.productsOnCart.next(products);
+  }
 }
 

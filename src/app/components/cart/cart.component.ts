@@ -18,7 +18,10 @@ export class CartComponent implements OnInit {
     this.contentService.getProductsOnCart.subscribe(data => {
       this.cart = data;
      this.numberOfProductsInCart = this.cart.length;      
-    })
+    });
+  }
+  removeProduct(product: any) {
+    this.contentService.removeProductsOnCart(product);
   }
 
 }
