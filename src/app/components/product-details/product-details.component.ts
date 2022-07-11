@@ -3,6 +3,7 @@ import { ActivatedRoute } from "@angular/router";
 import { ContentService } from '../../service/content/content.service';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
@@ -11,6 +12,7 @@ import { Router } from '@angular/router';
 export class ProductDetailsComponent implements OnInit {
   id: any;
   product: any;
+  totalOfCartItems: number = 0;
 
   constructor(private route: ActivatedRoute, private contentService: ContentService,
     private router: Router) {
@@ -32,7 +34,6 @@ export class ProductDetailsComponent implements OnInit {
   AddToCart(product: any[]) {
     this.contentService.AddProductToCart(product);
     this.router.navigate(['/cart']);
-
     
   }
 }
