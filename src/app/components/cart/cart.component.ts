@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs/internal/Subscription';
 import { ContentService } from '../../service/content/content.service';
 
 @Component({
@@ -6,19 +7,20 @@ import { ContentService } from '../../service/content/content.service';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
-export class CartComponent implements OnInit {
+export class CartComponent implements OnInit, OnDestroy {
 
   cart: any[] = [];
   total: number = 0;
   numberOfProductsInCart: number = 0;
   totalOfCartItems: number = 0;
+  newSubscription: Subscription | undefined;
   
   constructor( private contentService: ContentService) { }
 
   ngOnInit(): void {
-    this.contentService.getProductsOnCart.subscribe(data => {
+    this.newSubscription = this.contentService.getProductsOnCart.subscribe(data => {
       this.cart = data;      
-     this.numberOfProductsInCart = this.cart.length;
+     this.numberOfProductsInCart = this.cart.length;      
     });
     this.getTotalCost();
   }
@@ -29,7 +31,12 @@ export class CartComponent implements OnInit {
     }
   }
   removeProduct(product: any) {
+    this.totalOfCartItems -= product.price;
     this.contentService.removeProductsOnCart(product);
+   
+  }
+  ngOnDestroy() {
+    this.newSubscription?.unsubscribe();
   }
 
 }

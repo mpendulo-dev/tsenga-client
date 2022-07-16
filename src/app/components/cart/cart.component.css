@@ -1,0 +1,8 @@
+.emptyCart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cart-text {
+    color: #fc7e5b;
+}

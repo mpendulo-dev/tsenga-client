@@ -1,7 +1,15 @@
 <app-navbar [numberOfProducts]="numberOfProductsInCart"></app-navbar>
 
 <div class="cart mt-3">
-  <h1 class="text-center mb-4">Shopping Cart</h1>
+  <h1 class="text-center mb-5">Shopping Cart</h1>
+  <div *ngIf="cart.length === 0">
+    <p class="text-center fw-bold text-danger">Your cart is empty</p>
+    <p class="text-center cart-text">You have no items in your shopping cart</p>
+    <p class="text-center  cart-text">Let's go buy something!</p>
+    <div class="emptyCart">
+      <img src="./assets/img/cart-empty.png" alt="empty cart image" width="300px" height="300px">
+    </div>
+  </div>
   <div class="container mt-3" *ngIf="cart.length !== 0">
     <div class="row">
       <div class="col-md-8 mb-3">
@@ -17,7 +25,7 @@
                     <h5 class="card-title">{{product?.name}}</h5>
                   </div>
                   <div class="col-md-6">
-                    <h5>R{{product?.price}}</h5>
+                    <h5>R{{product?.price | number}}</h5>
                   </div>
                 </div>
                 <small>Reviews 4.9 ⭐(20)</small>
@@ -25,7 +33,7 @@
                 <p class="card-text">{{product?.shortDescription}}</p>
                 <div class="row">
                   <div class="col-md-6">
-                    <button class="btn btn-danger"  (click)="removeProduct(product)">Remove</button>
+                    <button class="btn btn-danger" (click)="removeProduct(product)">Remove</button>
                   </div>
                 </div>
               </div>
