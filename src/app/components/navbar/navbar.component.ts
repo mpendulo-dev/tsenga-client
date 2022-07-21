@@ -8,10 +8,12 @@ import { Component, OnInit,Input } from '@angular/core';
 export class NavbarComponent implements OnInit {
 
   toggleNavbar = true;
-  @Input() numberOfProducts: number = 0;
+  numberOfProducts: number = 0;
 
   constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+   this.numberOfProducts = Number(localStorage.getItem("total"));
+  }
 
 }

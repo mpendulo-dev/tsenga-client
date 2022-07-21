@@ -20,11 +20,17 @@ export class CartComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.newSubscription = this.contentService.getProductsOnCart.subscribe(data => {
       this.cart = data;      
-     this.numberOfProductsInCart = this.cart.length;      
     });
     this.getTotalCost();
+    this.numberOfItemsInCart();
+    localStorage.setItem('total', JSON.stringify(this.numberOfProductsInCart));
+   
   }
-
+  
+  numberOfItemsInCart(): number {
+     return this.numberOfProductsInCart = this.cart.length;      
+    
+  }
   getTotalCost() {
     for(let i = 0; i < this.cart.length; i++) {
       this.totalOfCartItems += this.cart[i].price;
@@ -32,8 +38,11 @@ export class CartComponent implements OnInit, OnDestroy {
   }
   removeProduct(product: any) {
     this.totalOfCartItems -= product.price;
+    this.numberOfProductsInCart -= 1;
     this.contentService.removeProductsOnCart(product);
-   
+    localStorage.setItem('total', JSON.stringify(this.numberOfProductsInCart));
+
+  
   }
   ngOnDestroy() {
     this.newSubscription?.unsubscribe();

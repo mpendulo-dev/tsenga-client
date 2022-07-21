@@ -1,4 +1,4 @@
-<app-navbar [numberOfProducts]="numberOfProductsInCart"></app-navbar>
+<app-navbar></app-navbar>
 
 <div class="cart mt-3">
   <h1 class="text-center mb-5">Shopping Cart</h1>
@@ -50,7 +50,7 @@
               <small class="fw-bold">Total Items: ({{numberOfProductsInCart}})</small> 
             </div>
             <div class="col-md-6">
-              <small class="text-success fs-5">R{{totalOfCartItems}}</small>
+              <small class="text-success fs-5">R{{totalOfCartItems | number}}</small>
             </div>
           </div>
         </div>
